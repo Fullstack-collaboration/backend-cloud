@@ -1,6 +1,10 @@
-import express from "express"
-import multer from "multer"
-import cors from "cors"
+// import express from "express"
+// import multer from "multer"
+// import cors from "cors"
+
+const express = require("express")
+const multer = require("multer")
+const cors = require("cors")
 
 const app = express()
 const port = 3000
@@ -28,4 +32,5 @@ app.listen(port, () => {
 })
 
 
-export default app
+// export default app
+module.exports = app
