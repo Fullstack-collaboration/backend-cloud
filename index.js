@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!")
 })
 
-app.post("/upload", upload.single("file"), (res, res) => {
+app.post("/upload", upload.single("file"), (req, res) => {
     console.log(req.file)
     res.send("File Upload")
 })
