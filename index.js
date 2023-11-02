@@ -26,3 +26,6 @@ app.post("/upload", upload.single("file"), (res, res) => {
 app.listen(port, () => {
     console.log(`Server is lisening on port ${port}`)
 })
+
+
+module.exports = app
