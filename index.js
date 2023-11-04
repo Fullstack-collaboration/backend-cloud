@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/upload", upload.single("file"), async (req, res) => {
-    // console.log(req.file)
+    console.log(req.file)
     // res.send("File Upload")
     const S3 = new S3Client({
         region: "auto",
@@ -45,7 +45,8 @@ app.post("/upload", upload.single("file"), async (req, res) => {
             ContentType: req.file.mimetype
         })
     )
-    res.send("File Upload")
+    const presigned = await S3.sign()
+    res.status(200).json({message: "Data berhasil bosss"})
 })
 
 app.listen(port, () => {
